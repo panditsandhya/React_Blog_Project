@@ -1,4 +1,4 @@
-import conf from '../conf';
+import conf from '../conf/conf';
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 
@@ -14,7 +14,9 @@ export class Service{
     this.bucket = new Storage(this.client);
   }
 
+  // slug is id here
   // Create Post
+
   async createPost({title, slug, content, featuredImage, status, userId}){
     try {
       return await this.databases.createDocument(
